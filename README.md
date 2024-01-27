@@ -1,7 +1,7 @@
 # Backend_PY_Django
   # To download Django
      python3 -m venv myenv
-     source  env/bin/activate
+     source  myenv/bin/activate
      pip install django
      django-admin startproject myproject
      cd myproject
