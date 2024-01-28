@@ -389,7 +389,7 @@
         "kind": 5,
         "importPath": "develop.playground.urls",
         "description": "develop.playground.urls",
-        "peekOfCode": "app_name = 'playground'\nurlpatterns = [\n    path('', TemplateView.as_view(template_name = \"blog/index.html\"))\n    # path('hello/', views.say_hello)\n]",
+        "peekOfCode": "app_name = 'playground'\nurlpatterns = [\n    path('', TemplateView.as_view(template_name = \"blog/index.html\")),\n    # path('hello/', views.say_hello)\n]",
         "detail": "develop.playground.urls",
         "documentation": {}
     },
@@ -398,7 +398,7 @@
         "kind": 5,
         "importPath": "develop.playground.urls",
         "description": "develop.playground.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', TemplateView.as_view(template_name = \"blog/index.html\"))\n    # path('hello/', views.say_hello)\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', TemplateView.as_view(template_name = \"blog/index.html\")),\n    # path('hello/', views.say_hello)\n]",
         "detail": "develop.playground.urls",
         "documentation": {}
     },
