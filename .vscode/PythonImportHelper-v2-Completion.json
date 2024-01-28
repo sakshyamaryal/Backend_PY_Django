@@ -48,6 +48,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -150,6 +166,56 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "django.utils.timezone",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "QuerySet",
+        "importPath": "django.db.models.query",
+        "description": "django.db.models.query",
+        "isExtraImport": true,
+        "detail": "django.db.models.query",
+        "documentation": {}
+    },
+    {
+        "label": "timezone",
+        "importPath": "django.utils",
+        "description": "django.utils",
+        "isExtraImport": true,
+        "detail": "django.utils",
         "documentation": {}
     },
     {
@@ -281,7 +347,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "WSGI_APPLICATION = 'develop.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation",
+        "peekOfCode": "WSGI_APPLICATION = 'develop.wsgi.application'\n# Database\n# https://docs.djangoproject.com/en/5.0/ref/settings/#databases\n# DATABASES = {\n#     'default': {\n#         'ENGINE': 'django.db.backends.sqlite3',\n#         'NAME': BASE_DIR / 'db.sqlite3',\n#     }\n# }\nDATABASES = {",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -290,7 +356,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.postgresql',\n        'NAME': 'postgres',\n        'USER': 'mac',\n        'PASSWORD': 'mypassword',\n        'HOST': 'localhost',\n        'PORT': '5432',\n    }\n}",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -376,12 +442,39 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "develop.playground.migrations.0001_initial",
+        "description": "develop.playground.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "develop.playground.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
         "label": "PlaygroundConfig",
         "kind": 6,
         "importPath": "develop.playground.apps",
         "description": "develop.playground.apps",
         "peekOfCode": "class PlaygroundConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'playground'",
         "detail": "develop.playground.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "kind": 6,
+        "importPath": "develop.playground.models",
+        "description": "develop.playground.models",
+        "peekOfCode": "class Category(models.Model):\n    name = models.CharField(max_length=100)  # Corrected typo: max_lenght -> max_length\n    def __str__(self):  # Corrected method name: _str_ -> __str__\n        return self.name\nclass Post(models.Model):\n    class PostObjects(models.Manager):\n        def get_queryset(self) -> QuerySet:\n            return super().get_queryset().filter(status='published')\n    options = (\n        ('draft', 'Draft'),",
+        "detail": "develop.playground.models",
+        "documentation": {}
+    },
+    {
+        "label": "Post",
+        "kind": 6,
+        "importPath": "develop.playground.models",
+        "description": "develop.playground.models",
+        "peekOfCode": "class Post(models.Model):\n    class PostObjects(models.Manager):\n        def get_queryset(self) -> QuerySet:\n            return super().get_queryset().filter(status='published')\n    options = (\n        ('draft', 'Draft'),\n        ('published', 'Published'),\n    )\n    category = models.ForeignKey(\n        Category, on_delete=models.PROTECT, default=1)",
+        "detail": "develop.playground.models",
         "documentation": {}
     },
     {
