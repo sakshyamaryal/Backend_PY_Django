@@ -311,7 +311,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages', \n    'django.contrib.staticfiles',\n    'playground',\n    'dev_api'\n]",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages', \n    'django.contrib.staticfiles',\n    'playground',\n    'dev_api',\n    'rest_framework'",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
