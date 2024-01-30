@@ -72,6 +72,30 @@
         "documentation": {}
     },
     {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "generics",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "Post",
+        "importPath": "playground.models",
+        "description": "playground.models",
+        "isExtraImport": true,
+        "detail": "playground.models",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -120,19 +144,11 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "Post",
+        "importPath": "playground.models ",
+        "description": "playground.models ",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "playground.models ",
         "documentation": {}
     },
     {
@@ -227,6 +243,14 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "HttpResponse",
         "importPath": "django.http",
         "description": "django.http",
@@ -253,12 +277,39 @@
         "documentation": {}
     },
     {
+        "label": "PostSerializer",
+        "kind": 6,
+        "importPath": "develop.dev_api.serializers",
+        "description": "develop.dev_api.serializers",
+        "peekOfCode": "class PostSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Post\n        fields = ('id', 'title', 'author','excerpt', 'content','status')",
+        "detail": "develop.dev_api.serializers",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "develop.dev_api.urls",
         "description": "develop.dev_api.urls",
         "peekOfCode": "urlpatterns = [\n    path('<int:pk>/', PostDetail.as_view(), name=\"detailcreate\"),\n    path('', PostList.as_view(), name=\"listcreate\"),\n]",
         "detail": "develop.dev_api.urls",
+        "documentation": {}
+    },
+    {
+        "label": "PostList",
+        "kind": 6,
+        "importPath": "develop.dev_api.views",
+        "description": "develop.dev_api.views",
+        "peekOfCode": "class PostList(generics.ListCreateAPIView):\n    queryset = Post.postobjects.all()\n    serializer_class = PostSerializer\n    pass\nclass PostDetail(generics.RetrieveDestroyAPIView):\n    pass",
+        "detail": "develop.dev_api.views",
+        "documentation": {}
+    },
+    {
+        "label": "PostDetail",
+        "kind": 6,
+        "importPath": "develop.dev_api.views",
+        "description": "develop.dev_api.views",
+        "peekOfCode": "class PostDetail(generics.RetrieveDestroyAPIView):\n    pass",
+        "detail": "develop.dev_api.views",
         "documentation": {}
     },
     {
@@ -428,7 +479,7 @@
         "kind": 5,
         "importPath": "develop.develop.urls",
         "description": "develop.develop.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('playground.urls', namespace='playground')),\n    # path('api', include('playground_api.urls', namespace='playground_api')),\n    # path('playground/', include('playground.urls')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('template/', include('playground.urls', namespace='playground')),\n    path('api/', include('dev_api.urls', namespace='dev_api')),\n    # path('playground/', include('playground.urls')),\n]",
         "detail": "develop.develop.urls",
         "documentation": {}
     },
