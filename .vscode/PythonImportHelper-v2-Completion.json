@@ -299,7 +299,7 @@
         "kind": 6,
         "importPath": "develop.dev_api.views",
         "description": "develop.dev_api.views",
-        "peekOfCode": "class PostList(generics.ListCreateAPIView):\n    queryset = Post.postobjects.all()\n    serializer_class = PostSerializer\n    pass\nclass PostDetail(generics.RetrieveDestroyAPIView):\n    pass",
+        "peekOfCode": "class PostList(generics.ListCreateAPIView):\n    queryset = Post.postobjects.all()\n    serializer_class = PostSerializer\n    pass\nclass PostDetail(generics.RetrieveDestroyAPIView):\n    queryset = Post.objects.all()\n    serializer_class = PostSerializer\n    pass",
         "detail": "develop.dev_api.views",
         "documentation": {}
     },
@@ -308,7 +308,7 @@
         "kind": 6,
         "importPath": "develop.dev_api.views",
         "description": "develop.dev_api.views",
-        "peekOfCode": "class PostDetail(generics.RetrieveDestroyAPIView):\n    pass",
+        "peekOfCode": "class PostDetail(generics.RetrieveDestroyAPIView):\n    queryset = Post.objects.all()\n    serializer_class = PostSerializer\n    pass",
         "detail": "develop.dev_api.views",
         "documentation": {}
     },
@@ -499,6 +499,15 @@
         "description": "develop.playground.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "develop.playground.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "AuthorAdmin",
+        "kind": 6,
+        "importPath": "develop.playground.admin",
+        "description": "develop.playground.admin",
+        "peekOfCode": "class AuthorAdmin(admin.ModelAdmin):\n    list_display = ('title','id','status','slug','author')\n    repopulated_fields = {'slug': ('title',),}\nadmin.site.register(models.Category)",
+        "detail": "develop.playground.admin",
         "documentation": {}
     },
     {
