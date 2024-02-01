@@ -80,3 +80,4 @@
     python3 manage.py dbshell
     python3 manage.py dbshell --database=mydatabase
     \dt
+
