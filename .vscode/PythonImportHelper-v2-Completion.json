@@ -299,7 +299,7 @@
         "kind": 6,
         "importPath": "develop.dev_api.views",
         "description": "develop.dev_api.views",
-        "peekOfCode": "class PostList(generics.ListCreateAPIView):\n    queryset = Post.postobjects.all()\n    serializer_class = PostSerializer\n    pass\nclass PostDetail(generics.RetrieveDestroyAPIView):\n    queryset = Post.objects.all()\n    serializer_class = PostSerializer\n    pass",
+        "peekOfCode": "class PostList(generics.ListCreateAPIView):\n    queryset = Post.postobjects.all()\n    serializer_class = PostSerializer\n    pass\nclass PostDetail(generics.RetrieveAPIView):\n    queryset = Post.objects.all()\n    serializer_class = PostSerializer\n    pass",
         "detail": "develop.dev_api.views",
         "documentation": {}
     },
@@ -308,7 +308,7 @@
         "kind": 6,
         "importPath": "develop.dev_api.views",
         "description": "develop.dev_api.views",
-        "peekOfCode": "class PostDetail(generics.RetrieveDestroyAPIView):\n    queryset = Post.objects.all()\n    serializer_class = PostSerializer\n    pass",
+        "peekOfCode": "class PostDetail(generics.RetrieveAPIView):\n    queryset = Post.objects.all()\n    serializer_class = PostSerializer\n    pass",
         "detail": "develop.dev_api.views",
         "documentation": {}
     },
@@ -434,7 +434,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -443,7 +443,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -452,7 +452,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/5.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -461,7 +461,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ]\n}",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -470,7 +470,16 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ]\n}",
+        "detail": "develop.develop.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "develop.develop.settings",
+        "description": "develop.develop.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ]\n}",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
