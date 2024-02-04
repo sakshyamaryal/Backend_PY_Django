@@ -40,6 +40,15 @@
         "documentation": {}
     },
     {
+        "label": "django.db",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db",
+        "description": "django.db",
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -80,6 +89,14 @@
         "documentation": {}
     },
     {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "generics",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -96,19 +113,43 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "Post",
+        "importPath": "playground.models",
+        "description": "playground.models",
         "isExtraImport": true,
-        "detail": "django.test",
+        "detail": "playground.models",
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "Category",
+        "importPath": "playground.models",
+        "description": "playground.models",
         "isExtraImport": true,
-        "detail": "django.test",
+        "detail": "playground.models",
+        "documentation": {}
+    },
+    {
+        "label": "Post",
+        "importPath": "playground.models",
+        "description": "playground.models",
+        "isExtraImport": true,
+        "detail": "playground.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "playground.models",
+        "description": "playground.models",
+        "isExtraImport": true,
+        "detail": "playground.models",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -141,6 +182,38 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "APITestCase",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
+        "isExtraImport": true,
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -211,14 +284,6 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
         "label": "QuerySet",
         "importPath": "django.db.models.query",
         "description": "django.db.models.query",
@@ -232,6 +297,14 @@
         "description": "django.utils",
         "isExtraImport": true,
         "detail": "django.utils",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -283,6 +356,15 @@
         "description": "develop.dev_api.serializers",
         "peekOfCode": "class PostSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Post\n        fields = ('id', 'title', 'author','excerpt', 'content','status')",
         "detail": "develop.dev_api.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "PostTest",
+        "kind": 6,
+        "importPath": "develop.dev_api.tests",
+        "description": "develop.dev_api.tests",
+        "peekOfCode": "class PostTest(APITestCase):\n    def test_view_post(self):\n        url = reverse('dev_api:listcreate')\n        response = self.client.get(url, format='json') \n        self.assertEqual(response.status_code, status.HTTP_200_OK) # compareing with respone var with the status code\n        # client refer to simulating a browser \n    def create_post(self):\n        self.test_category = Category.objects.create(name = 'django')\n        self.testuser1 = User.objects.create_user(username='test_user1', password='123456789')\n        data = {\"title\":\"new\",",
+        "detail": "develop.dev_api.tests",
         "documentation": {}
     },
     {
@@ -544,6 +626,15 @@
         "description": "develop.playground.models",
         "peekOfCode": "class Post(models.Model):\n    class PostObjects(models.Manager):\n        def get_queryset(self) -> QuerySet:\n            return super().get_queryset().filter(status='published')\n    options = (\n        ('draft', 'Draft'),\n        ('published', 'Published'),\n    )\n    category = models.ForeignKey(\n        Category, on_delete=models.PROTECT, default=1)",
         "detail": "develop.playground.models",
+        "documentation": {}
+    },
+    {
+        "label": "Test_Create_Post",
+        "kind": 6,
+        "importPath": "develop.playground.tests",
+        "description": "develop.playground.tests",
+        "peekOfCode": "class Test_Create_Post(TestCase):\n    @classmethod\n    def setUpTestData(cls):\n        test_category = Category.objects.create(name ='django')\n        testuser1 = User.objects.create_user(username='test_user1', password='123456789')\n        test_post = Post.objects.create(category_id = 1, title='Post Title',excerpt ='Post excerpt', content ='Post Content', slug = 'post-titile', author_id = 1,status='published')\n    def test_blog_content(self):\n        post =  Post.postobjects.get(id=1)\n        cat = Category.objects.get(id=1)\n        author = f'{post.author}'",
+        "detail": "develop.playground.tests",
         "documentation": {}
     },
     {
