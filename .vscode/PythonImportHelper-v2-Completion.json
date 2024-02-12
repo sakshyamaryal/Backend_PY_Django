@@ -444,7 +444,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages', \n    'django.contrib.staticfiles',\n    'playground',\n    'dev_api',\n    'rest_framework'",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages', \n    'django.contrib.staticfiles',\n    'playground',\n    'dev_api',\n    'rest_framework',",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -453,7 +453,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'develop.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'corsheaders.middleware.CorsMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -543,7 +543,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ]\n}",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ]\n}\nCORS_ALLOWED_ORIGINS = [",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -552,7 +552,7 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ]\n}",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\nREST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ]\n}\nCORS_ALLOWED_ORIGINS = [\n    \"http://127.0.0.1:3000\",\n    \"http://localhost:3000\"\n]",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
@@ -561,7 +561,16 @@
         "kind": 5,
         "importPath": "develop.develop.settings",
         "description": "develop.develop.settings",
-        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ]\n}",
+        "peekOfCode": "REST_FRAMEWORK = {\n    'DEFAULT_PERMISSION_CLASSES': [\n        'rest_framework.permissions.AllowAny'\n    ]\n}\nCORS_ALLOWED_ORIGINS = [\n    \"http://127.0.0.1:3000\",\n    \"http://localhost:3000\"\n]",
+        "detail": "develop.develop.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOWED_ORIGINS",
+        "kind": 5,
+        "importPath": "develop.develop.settings",
+        "description": "develop.develop.settings",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://127.0.0.1:3000\",\n    \"http://localhost:3000\"\n]",
         "detail": "develop.develop.settings",
         "documentation": {}
     },
