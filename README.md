@@ -73,7 +73,7 @@
     4. python manage.py createsuperuser
 
 # admin run 
-    admin->password->mypassword->sakshyam
+    <!-- admin->password->mypassword->sakshyam -->
     http://127.0.0.1:8000/admin 
 
 # view database table |-
