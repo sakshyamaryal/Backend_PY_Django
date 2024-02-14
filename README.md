@@ -81,3 +81,5 @@
     python3 manage.py dbshell --database=mydatabase
     \dt
 
+    project not showing commit 
+
